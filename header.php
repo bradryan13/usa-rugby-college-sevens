@@ -14,24 +14,31 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+<div id="wrapper" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	<header id="sidebar-wrapper" class="site-header" role="banner">
+		<div class="logo">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Logo</a></h1>
 		</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<nav id="site-navigation" class="sidebar-nav" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'usa-rugby-college-sevens' ); ?></h1>
-			<div class="screen-reader-text skip-link"><a href="#content"><?php _e( 'Skip to content', 'usa-rugby-college-sevens' ); ?></a></div>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			  <ul class="sidebar-nav">
+		          <li><a href="#">Dashboard</a></li>
+		          <li><a href="#">Shortcuts</a></li>
+		          <li><a href="#">Overview</a></li>
+		          <li><a href="#">Events</a></li>
+		          <li><a href="#">About</a></li>
+		          <li><a href="#">Services</a></li>
+		          <li><a href="#">Contact</a></li>
+        	</ul>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

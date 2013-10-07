@@ -16,6 +16,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		 <h1>
+         <a id="menu-toggle" href="#" class="btn btn-default"><span class="glyphicon glyphicon-heart"></span>
+            Simple Sidebar
+         </a>
+        </h1>
+
+		<span class="glyphicon glyphicon-heart"></span> Testing
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

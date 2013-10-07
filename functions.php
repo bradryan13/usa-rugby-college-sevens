@@ -79,6 +79,7 @@ function usa_rugby_college_sevens_widgets_init() {
 }
 add_action( 'widgets_init', 'usa_rugby_college_sevens_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles
  */
@@ -87,7 +88,15 @@ function usa_rugby_college_sevens_scripts() {
 
 	wp_enqueue_script( 'usa-rugby-college-sevens-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'usa-rugby-college-sevens-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'usa-rugby-college-sevens-functions', get_template_directory_uri() . '/js/jquery.funcs.js', array(), '1.0', true );
+
+	wp_enqueue_script( 'usa-rugby-college-sevens-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array(), '1.0', true );
+
+	wp_enqueue_style ( 'usa-rugby-college-sevens-bootstral-css', get_template_directory_uri() . '/css/bootstrap.css', array(), '1.0', true );
+
+	wp_enqueue_style ( 'usa-rugby-college-sevens-main-style', get_template_directory_uri() . '/css/main.css', array(), '1.0', true );
+
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -97,6 +106,14 @@ function usa_rugby_college_sevens_scripts() {
 		wp_enqueue_script( 'usa-rugby-college-sevens-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
+
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, null);
+   wp_enqueue_script('jquery');
+}
+
 add_action( 'wp_enqueue_scripts', 'usa_rugby_college_sevens_scripts' );
 
 /**
