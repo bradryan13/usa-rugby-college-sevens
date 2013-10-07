@@ -25,19 +25,12 @@
 	<?php do_action( 'before' ); ?>
 	<header id="sidebar-wrapper" class="site-header" role="banner">
 		<div class="logo">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Logo</a></h1>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri() . '/img/usa-rugby-college-sevens-logo.png' ?>"></a>
 		</div>
-
 		<nav id="site-navigation" class="sidebar-nav" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'usa-rugby-college-sevens' ); ?></h1>
 			  <ul class="sidebar-nav">
-		          <li><a href="#">Dashboard</a></li>
-		          <li><a href="#">Shortcuts</a></li>
-		          <li><a href="#">Overview</a></li>
-		          <li><a href="#">Events</a></li>
-		          <li><a href="#">About</a></li>
-		          <li><a href="#">Services</a></li>
-		          <li><a href="#">Contact</a></li>
+		          <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar-nav')) : else : ?>
+				  <?php endif; ?>
         	</ul>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

@@ -69,12 +69,12 @@ add_action( 'after_setup_theme', 'usa_rugby_college_sevens_setup' );
  */
 function usa_rugby_college_sevens_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'usa-rugby-college-sevens' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'name'          => __( 'Sidebar-Nav', 'usa-rugby-college-sevens' ),
+		'id'            => 'sidebar-nav',
+		'before_widget' => '<li class="nav-item">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<span class="no-show widget-title">',
+		'after_title'   => '</span>',
 	) );
 }
 add_action( 'widgets_init', 'usa_rugby_college_sevens_widgets_init' );
@@ -84,17 +84,25 @@ add_action( 'widgets_init', 'usa_rugby_college_sevens_widgets_init' );
  * Enqueue scripts and styles
  */
 function usa_rugby_college_sevens_scripts() {
+
 	wp_enqueue_style( 'usa-rugby-college-sevens-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', false, '1.0', 'all' );
 
 	wp_enqueue_script( 'usa-rugby-college-sevens-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'usa-rugby-college-sevens-functions', get_template_directory_uri() . '/js/jquery.funcs.js', array(), '1.0', true );
 
-	wp_enqueue_script( 'usa-rugby-college-sevens-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array(), '1.0', true );
+	wp_enqueue_script( 'usa-rugby-college-sevens-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array(), '1.0', true );
 
-	wp_enqueue_style ( 'usa-rugby-college-sevens-bootstral-css', get_template_directory_uri() . '/css/bootstrap.css', array(), '1.0', true );
+	wp_enqueue_script( 'usa-rugby-college-sevens-video', get_template_directory_uri() . '/js/video.js', array(), '1.0', true );
 
-	wp_enqueue_style ( 'usa-rugby-college-sevens-main-style', get_template_directory_uri() . '/css/main.css', array(), '1.0', true );
+	wp_enqueue_script( 'usa-rugby-college-sevens-images-loaded', get_template_directory_uri() . '/js/jquery.imagesloaded.js', array(), '1.0', true );
+	
+	wp_enqueue_script( 'usa-rugby-college-sevens-big-vid', get_template_directory_uri() . '/js/bigvideo.js', array(), '1.0', true );
+
+
+
 
 
 
