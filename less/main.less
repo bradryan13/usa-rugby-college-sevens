@@ -101,6 +101,8 @@ article {
     padding: 80px 100px;
     background: #FFF;
     border-right: 1px solid #DAE3E9;
+    position: absolute;
+	width: 100%;
     .post {
     	border-bottom: 1px solid #DAE3E9;
     	margin-bottom: 40px;
@@ -181,9 +183,41 @@ article {
 }
 
 #top-feature {
-	width: 100%;
+	max-width: 980px;
 	height: 550px;
 	background: #333;
+	border-right: 1px solid #DAE3E9;
+	position: relative;
+	#wpgmaps_directions_edit_1 {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 10px 20px; 
+		width: 100%;
+		background: rgba(256, 256, 256, 0.5);
+		border-bottom: 15px solid #FFF;
+		input[type=text], input[type=submit] {
+			padding: 10px;
+			font-size: 14px;
+			font-weight: bold;
+			color: #575E66;
+			margin-left: 10px;
+			border: 1px solid #FFF;
+			border-radius: 3px;
+			width: 150px;
+		}
+		input[type=submit] {
+			padding: 12px 30px 10px 30px;
+			border: 0;
+			color: #FFF;
+			background: #12ddb0;
+			width: 110px;
+		}
+	}
+	#directions_panel_1 {
+		overflow: auto;
+		display: block;
+	}
 }
 
 .transition(...) {

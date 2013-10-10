@@ -12,13 +12,17 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('top-feature')) : else : ?>
+<?php endif; ?>
 
-		<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('top-feature')) : else : ?>
-		<?php endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<div id="posts">
+		<?php the_post(); ?>
+		<article>
+			<div class="article-wrapper">
+				<?php the_content();?>
+			</div>
+		</article>
+		
+	</div>
 
 <?php get_footer(); ?>
