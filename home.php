@@ -13,7 +13,6 @@
 
 get_header(); ?>
 
-
     			<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('home-feature')) : else : ?>
 				<?php endif; ?>
 				
