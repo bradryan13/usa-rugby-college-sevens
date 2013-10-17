@@ -1,6 +1,12 @@
 
 $(document).ready(function () {
 
+  $(function () {
+        $("[rel='tooltip']").tooltip();
+  });
+
+  $("#posts").tooltip();
+
   $("#menu-toggle").click(function(e) {
           e.preventDefault();
           $("#wrapper").toggleClass("active");
@@ -12,10 +18,19 @@ $(document).ready(function () {
     }
 });
 
-  $(".nav-item").click(function(){
+  $("li.page_item").click(function(){
      window.location=$(this).find("a").attr("href"); 
      return false;
   });
+
+   $(".team").click(function(){
+     window.location=$(this).find("a").attr("href"); 
+     return false;
+  });
+
 });
+
+  
+
 
 

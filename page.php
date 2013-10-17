@@ -15,12 +15,14 @@ get_header(); ?>
 <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('top-feature')) : else : ?>
 <?php endif; ?>
 
+
 	<div id="posts">
+
+		 <h1><?php echo get_the_title(); ?> </h1>
+
 		<?php the_post(); ?>
 		<article>
-			<div class="article-wrapper">
 				<?php the_content();?>
-			</div>
 		</article>
 		
 	</div>

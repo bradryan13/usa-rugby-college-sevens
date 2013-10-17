@@ -26,15 +26,23 @@
 <div id="wrapper" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="sidebar-wrapper" class="site-header" role="banner">
+		<div class="rel">
 		<div class="logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri() . '/img/usa-rugby-college-sevens-logo.png' ?>"></a>
 		</div>
 		<nav id="site-navigation" class="sidebar-nav" role="navigation">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			  <ul class="sidebar-nav">
 		          <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar-nav')) : else : ?>
 				  <?php endif; ?>
+
+		
+
         	</ul>
 		</nav><!-- #site-navigation -->
+		<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('footer')) : else : ?>
+				  <?php endif; ?>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
